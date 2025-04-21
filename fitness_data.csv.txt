@@ -1,0 +1,5 @@
+user,duration,calories,met_goal,logged_3days,logic_expr
+Alice,45,400,True,True,p and q
+Bob,30,250,True,False,p and q
+Charlie,60,600,True,True,p or not q
+Diana,25,200,False,True,not p and q
