@@ -28,8 +28,20 @@ class WorkoutSession:
             print(f"Logic error for {self.user}: {e}")
             return False
 
-    
-   
+    def to_dict(self):
+        return {
+            "user": self.user,
+            "duration": self.duration,
+            "calories": self.calories,
+            "met_goal": self.met_goal,
+            "logged_3days": self.logged_3days,
+            "logic_expr": self.logic_expr,
+            "logic_value": self.evaluate_logic()
+        }
+
+    def __repr__(self):
+        return f"{self.user} - {self.duration}min - {self.calories}cal - Logic: {self.evaluate_logic()}"
+
 # ------------------ Sorting Algorithms ------------------
 class InsertionSort(SortAlgorithm):
     def sort(self, sessions):
