@@ -64,13 +64,7 @@ class MergeSort(SortAlgorithm):
         right = self.sort(sessions[mid:])
         return self.merge(left, right)
 
-    def merge(self, left, right):
-        result = []
-        while left and right:
-            if (left[0].duration < right[0].duration or
-                (left[0].duration == right[0].duration and left[0].evaluate_logic())):
-                result.append(left.pop(0))
-            else:
+    
                 result.append(right.pop(0))
         return result + left + right
 
@@ -96,7 +90,13 @@ def analyze_performance(sessions):
 
     plt.bar(['Insertion', 'Merge'], [t2 - t1, t4 - t3])
     plt.title("Sorting Performance")
-    plt.ylabel("Time (s)")
+    plt.ylabel("Time (s)")def merge(self, left, right):
+        result = []
+        while left and right:
+            if (left[0].duration < right[0].duration or
+                (left[0].duration == right[0].duration and left[0].evaluate_logic())):
+                result.append(left.pop(0))
+            else:
     plt.show()
 
 # ------------------ Data Handling ------------------
