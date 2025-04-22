@@ -19,7 +19,7 @@ class WorkoutSession:
         self.logged_3days = bool(logged_3days)
         self.logic_expr = logic_expr
 
-    def(self):
+    def evaluate_logic(self):
         p = self.met_goal
         q = self.logged_3days
         try:
