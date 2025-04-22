@@ -3,7 +3,11 @@ import time
 from abc import ABC, abstractmethod
 import matplotlib.pyplot as plt
 
-
+# ------------------ Abstract Classes ------------------
+class SortAlgorithm(ABC):
+    @abstractmethod
+    def sort(self, data):
+        pass
 
 # ------------------ Data Model ------------------
 class WorkoutSession:
