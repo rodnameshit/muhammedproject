@@ -122,6 +122,7 @@ def save_sessions(filename, sessions):
 
 
     def get_badge(self):
+         if self.duration >= 60 and self.calories >= 500:
 
 # ------------------ Manual Input ------------------
 def manual_input():
