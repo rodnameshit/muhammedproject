@@ -120,6 +120,9 @@ def save_sessions(filename, sessions):
     df = pd.DataFrame([s.to_dict() for s in sessions])
     df.to_csv(filename, index=False)
 
+
+    def get_badge(self):
+
 # ------------------ Manual Input ------------------
 def manual_input():
     sessions = []
