@@ -1,6 +1,8 @@
 import pandas as pd
 import time
 from abc import ABC, abstractmethod
+import matplotlib
+matplotlib.use('Agg')  # ✅ Use non-GUI backend to prevent Tkinter issues
 import matplotlib.pyplot as plt
 
 # ------------------ Abstract Classes ------------------
@@ -64,7 +66,13 @@ class MergeSort(SortAlgorithm):
         right = self.sort(sessions[mid:])
         return self.merge(left, right)
 
-    
+    def merge(self, left, right):
+        result = []
+        while left and right:
+            if (left[0].duration < right[0].duration or
+                (left[0].duration == right[0].duration and left[0].evaluate_logic())):
+                result.append(left.pop(0))
+            else:
                 result.append(right.pop(0))
         return result + left + right
 
@@ -90,14 +98,9 @@ def analyze_performance(sessions):
 
     plt.bar(['Insertion', 'Merge'], [t2 - t1, t4 - t3])
     plt.title("Sorting Performance")
-    plt.ylabel("Time (s)")def merge(self, left, right):
-        result = []
-        while left and right:
-            if (left[0].duration < right[0].duration or
-                (left[0].duration == right[0].duration and left[0].evaluate_logic())):
-                result.append(left.pop(0))
-            else:
-    plt.show()
+    plt.ylabel("Time (s)")
+    plt.savefig("performance_plot.png")  # ✅ Save plot as image
+    print("Performance plot saved as 'performance_plot.png'.")
 
 # ------------------ Data Handling ------------------
 def load_sessions(filename):
@@ -186,4 +189,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
