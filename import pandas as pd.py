@@ -121,8 +121,17 @@ def save_sessions(filename, sessions):
     df.to_csv(filename, index=False)
 
 
-    def get_badge(self):
-         if self.duration >= 60 and self.calories >= 500:
+def get_badge(self):
+    if self.duration >= 60 and self.calories >= 500:
+        return "💪 Endurance Beast"
+    elif self.met_goal and self.logged_3days:
+        return "🔥 Consistency Champ"
+    elif self.calories >= 400:
+        return "⚡ Calorie Crusher"
+    else:
+        return "🏃 Keep Going"
+    
+
 
 # ------------------ Manual Input ------------------
 def manual_input():
