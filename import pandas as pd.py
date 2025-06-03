@@ -21,6 +21,9 @@ class WorkoutSession:
         self.logged_3days = bool(logged_3days)
         self.logic_expr = logic_expr
 
+def save_sessions_excel(filename, sessions):
+
+
     def evaluate_logic(self):
         p = self.met_goal
         q = self.logged_3days
