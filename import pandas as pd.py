@@ -177,7 +177,7 @@ def main():
     print("Diana,25,200,False,True,not p and q")
 
     met_goal = input("Met goal? (yes/no): ").strip().lower() in ['yes', 'y']
-    
+    logged_3days = input("Logged 3+ days? (yes/no): ").strip().lower() in ['yes', 'y']
     choice = input("\nWould you like to (1) Load from CSV or (2) Enter manually? ")
     sessions = []
     if choice == '1':
