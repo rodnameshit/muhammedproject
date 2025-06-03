@@ -139,6 +139,9 @@ def get_badge(self):
         return "🏃 Keep Going"
     
 
+    
+    
+
 
 # ------------------ Manual Input ------------------
 def manual_input():
@@ -148,6 +151,9 @@ def manual_input():
         user = input("Enter patient name (or 'done' to stop): ")
         if user.lower() == 'done':
             break
+        if any(s.user == user for s in sessions):
+            print("User already entered. Please enter a unique name.")
+            continue
         try:
             duration = int(input("Duration (in minutes): "))
             calories = float(input("Calories burned: "))
