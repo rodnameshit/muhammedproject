@@ -22,9 +22,11 @@ class WorkoutSession:
         self.logic_expr = logic_expr
 
 def save_sessions_excel(filename, sessions):
-     df = pd.DataFrame([s.to_dict() for s in sessions])
+    df = pd.DataFrame([s.to_dict() for s in sessions])
     df.to_excel(filename, index=False)
-print(f"Excel file saved as '{filename}'.")
+    print(f"Excel file saved as '{filename}'.")
+
+        
 
     def evaluate_logic(self):
         p = self.met_goal
